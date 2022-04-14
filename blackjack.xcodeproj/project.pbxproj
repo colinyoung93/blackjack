@@ -13,6 +13,9 @@
 		E5E0DBAC27FA2D9A007CC0F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E0DBAA27FA2D9A007CC0F5 /* Main.storyboard */; };
 		E5E0DBAE27FA2DA2007CC0F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E0DBAD27FA2DA2007CC0F5 /* Assets.xcassets */; };
 		E5E0DBB127FA2DA2007CC0F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E0DBAF27FA2DA2007CC0F5 /* LaunchScreen.storyboard */; };
+		E5E0DBB927FBA532007CC0F5 /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0DBB827FBA532007CC0F5 /* GameScreenViewController.swift */; };
+		E5E0DBBB27FBA551007CC0F5 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0DBBA27FBA551007CC0F5 /* CreditsViewController.swift */; };
+		E5E0DC6F28078399007CC0F5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E0DC6E28078399007CC0F5 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		E5E0DBAD27FA2DA2007CC0F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E0DBB027FA2DA2007CC0F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E0DBB227FA2DA2007CC0F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5E0DBB827FBA532007CC0F5 /* GameScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
+		E5E0DBBA27FBA551007CC0F5 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		E5E0DC6E28078399007CC0F5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				E5E0DBAD27FA2DA2007CC0F5 /* Assets.xcassets */,
 				E5E0DBAF27FA2DA2007CC0F5 /* LaunchScreen.storyboard */,
 				E5E0DBB227FA2DA2007CC0F5 /* Info.plist */,
+				E5E0DBB827FBA532007CC0F5 /* GameScreenViewController.swift */,
+				E5E0DBBA27FBA551007CC0F5 /* CreditsViewController.swift */,
+				E5E0DC6E28078399007CC0F5 /* HomeViewController.swift */,
 			);
 			path = blackjack;
 			sourceTree = "<group>";
@@ -140,7 +149,10 @@
 			files = (
 				E5E0DBA927FA2D9A007CC0F5 /* ViewController.swift in Sources */,
 				E5E0DBA527FA2D9A007CC0F5 /* AppDelegate.swift in Sources */,
+				E5E0DBB927FBA532007CC0F5 /* GameScreenViewController.swift in Sources */,
 				E5E0DBA727FA2D9A007CC0F5 /* SceneDelegate.swift in Sources */,
+				E5E0DBBB27FBA551007CC0F5 /* CreditsViewController.swift in Sources */,
+				E5E0DC6F28078399007CC0F5 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

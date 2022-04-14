@@ -144,6 +144,16 @@
                                     <constraint firstAttribute="width" constant="133" id="t8a-k0-6WS"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryk-p2-bVk">
+                                <rect key="frame" x="174" y="702" width="67" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="iFz-Eb-3vr"/>
+                                    <constraint firstAttribute="width" constant="67" id="jWf-vZ-Hdb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PAq-tx-ua4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -152,6 +162,7 @@
                             <constraint firstItem="wmG-PX-ino" firstAttribute="top" secondItem="PAq-tx-ua4" secondAttribute="top" constant="94" id="DK3-pJ-GqL"/>
                             <constraint firstItem="NtH-IM-GlJ" firstAttribute="top" secondItem="PAq-tx-ua4" secondAttribute="top" constant="65" id="JZ3-bD-RJ1"/>
                             <constraint firstItem="ErL-o5-doD" firstAttribute="leading" secondItem="NtH-IM-GlJ" secondAttribute="trailing" constant="-52" id="Kqe-kT-PXn"/>
+                            <constraint firstItem="Ryk-p2-bVk" firstAttribute="top" secondItem="PFW-GS-yCF" secondAttribute="bottom" constant="-67" id="LKJ-Xb-2B0"/>
                             <constraint firstItem="wmG-PX-ino" firstAttribute="leading" secondItem="PAq-tx-ua4" secondAttribute="leading" constant="20" id="RFn-Mx-eQo"/>
                             <constraint firstItem="PAq-tx-ua4" firstAttribute="bottom" secondItem="PFW-GS-yCF" secondAttribute="bottom" constant="44" id="UA6-aS-aGk"/>
                             <constraint firstItem="PAq-tx-ua4" firstAttribute="trailing" secondItem="ZrD-zs-sAO" secondAttribute="trailing" constant="161" id="WBv-NE-j64"/>
@@ -161,6 +172,7 @@
                             <constraint firstItem="PFW-GS-yCF" firstAttribute="leading" secondItem="PAq-tx-ua4" secondAttribute="leading" constant="20" id="kJY-8i-SBw"/>
                             <constraint firstItem="ZrD-zs-sAO" firstAttribute="leading" secondItem="PAq-tx-ua4" secondAttribute="leading" constant="161" id="mp3-WT-0sG"/>
                             <constraint firstItem="PAq-tx-ua4" firstAttribute="trailing" secondItem="Ypx-fg-gcr" secondAttribute="trailing" constant="20" id="ucc-Q9-BLm"/>
+                            <constraint firstItem="Ryk-p2-bVk" firstAttribute="leading" secondItem="PFW-GS-yCF" secondAttribute="trailing" constant="21" id="xNg-dU-JZj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="game" selectedImage="gamecontroller" catalog="system" id="O20-Nf-krh"/>
@@ -169,6 +181,8 @@
                         <outlet property="dealerCardImage2" destination="Ypx-fg-gcr" id="xea-F2-d5K"/>
                         <outlet property="playerCardImage1" destination="wmG-PX-ino" id="zsh-ht-z10"/>
                         <outlet property="playerCardImage2" destination="ErL-o5-doD" id="lBV-xA-dql"/>
+                        <outlet property="playerScore" destination="Ryk-p2-bVk" id="RsV-un-yVV"/>
+                        <outlet property="playerScoreLabel" destination="Ryk-p2-bVk" id="osZ-xt-q2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xn5-3Q-lAW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

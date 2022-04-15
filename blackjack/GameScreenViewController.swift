@@ -25,7 +25,8 @@ class GameScreenViewController: UIViewController {
     @IBOutlet weak var dealerCardImage1: UIImageView!
     @IBOutlet weak var dealerCardImage2: UIImageView!
     
-    
+
+    @IBOutlet weak var dealerScoreLabel: UILabel!
     @IBOutlet weak var playerScoreLabel: UILabel!
     
     var deck = [PlayingCard]()
@@ -53,20 +54,23 @@ class GameScreenViewController: UIViewController {
     
     
     func drawCard(isPlayer: Bool){
-        var card = deck[0]
+        let card = deck[0]
         deck.remove(at: 0)
         if (isPlayer) {
             playerCardImage2.image = card.image
             playerScore += card.value
-            updatePlayerScore(score: playerScore)
+            
         } else {
             dealerCardImage2.image = card.image
             dealerScore += card.value
         }
+        updateHandValues()
+        
     }
     
-    func updatePlayerScore(score:Int){
-        playerScoreLabel.text = String(score)
+    func updateHandValues(){
+        playerScoreLabel.text = String(playerScore)
+        dealerScoreLabel.text = String(dealerScore)
     }
     
     
@@ -99,9 +103,26 @@ class GameScreenViewController: UIViewController {
         deck.remove(at: 0)
         
         
-        updatePlayerScore(score: playerScore)
+        updateHandValues()
         
     }
+    
+    @IBAction func standButton(_ sender: UIButton) {
+        if(!playerBust){
+            while dealerScore < playerScore {
+                drawCard(isPlayer: false)
+            }
+            
+            if(dealerScore <= 21 && dealerScore >= playerScore) {
+                //deduct player overall score
+            } else {
+                //increase player overall score
+            }
+            
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 

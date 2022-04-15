@@ -31,6 +31,7 @@ class GameScreenViewController: UIViewController {
     var deck = [PlayingCard]()
     var dealerScore = 0
     var playerScore = 0
+    var playerBust = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,29 @@ class GameScreenViewController: UIViewController {
     }
     
     @IBAction func hitMeButton(_ sender: UIButton) {
-        
+        if(!playerBust){
+            drawCard(isPlayer: true)
+            if (playerScore > 21){
+                playerBust = true
+                //dealer won
+            }
+        }
+    }
+    
+    
+    
+    
+    func drawCard(isPlayer: Bool){
+        var card = deck[0]
+        deck.remove(at: 0)
+        if (isPlayer) {
+            playerCardImage2.image = card.image
+            playerScore += card.value
+            updatePlayerScore(score: playerScore)
+        } else {
+            dealerCardImage2.image = card.image
+            dealerScore += card.value
+        }
     }
     
     func updatePlayerScore(score:Int){
@@ -61,6 +84,12 @@ class GameScreenViewController: UIViewController {
         }
         
         deck.shuffle()
+        dealerCardImage1.image = deck[0].image
+        dealerScore += deck[0].value
+        deck.remove(at: 0)
+        dealerCardImage2.image = deck[0].image
+        dealerScore += deck[0].value
+        deck.remove(at: 0)
         
         playerCardImage1.image = deck[0].image
         playerScore += deck[0].value
@@ -68,12 +97,7 @@ class GameScreenViewController: UIViewController {
         playerCardImage2.image = deck[0].image
         playerScore += deck[0].value
         deck.remove(at: 0)
-        dealerCardImage1.image = deck[0].image
-        dealerScore += deck[0].value
-        deck.remove(at: 0)
-        dealerCardImage2.image = deck[0].image
-        dealerScore += deck[0].value
-        deck.remove(at: 0)
+        
         
         updatePlayerScore(score: playerScore)
         

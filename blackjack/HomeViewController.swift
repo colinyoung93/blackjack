@@ -11,16 +11,21 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var nameField: UITextField!
     
+    @IBOutlet weak var guestLabel: UILabel!
     
-    
+    var result: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guestLabel.text = ""
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func nameChangeButton(_ sender: UIButton) {
+        result = nameField.text!
+        guestLabel.text = result
+    }
+    
     /*
     // MARK: - Navigation
 

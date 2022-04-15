@@ -31,8 +31,9 @@ class GameScreenViewController: UIViewController {
     
     var deck = [PlayingCard]()
     var dealerScore = 0
-    var playerScore = 0
+    var playerHandValue = 0
     var playerBust = false
+    var playerScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,22 +44,22 @@ class GameScreenViewController: UIViewController {
     @IBAction func hitMeButton(_ sender: UIButton) {
         if(!playerBust){
             drawCard(isPlayer: true)
-            if (playerScore > 21){
+            if (playerHandValue > 21){
                 playerBust = true
                 //dealer won
+                playerScore -= 50
+                
             }
         }
     }
     
-    
-    
-    
+
     func drawCard(isPlayer: Bool){
         let card = deck[0]
         deck.remove(at: 0)
         if (isPlayer) {
             playerCardImage2.image = card.image
-            playerScore += card.value
+            playerHandValue += card.value
             
         } else {
             dealerCardImage2.image = card.image
@@ -69,14 +70,16 @@ class GameScreenViewController: UIViewController {
     }
     
     func updateHandValues(){
-        playerScoreLabel.text = String(playerScore)
+        playerScoreLabel.text = String(playerHandValue)
         dealerScoreLabel.text = String(dealerScore)
     }
     
     
     func buildAndDeal(){
         dealerScore = 0
-        playerScore = 0
+        playerHandValue = 0
+        playerBust = false
+        deck.removeAll()
         for x in 1...13{
             for y in 1...4{
                 if (x < 10){
@@ -96,10 +99,10 @@ class GameScreenViewController: UIViewController {
         deck.remove(at: 0)
         
         playerCardImage1.image = deck[0].image
-        playerScore += deck[0].value
+        playerHandValue += deck[0].value
         deck.remove(at: 0)
         playerCardImage2.image = deck[0].image
-        playerScore += deck[0].value
+        playerHandValue += deck[0].value
         deck.remove(at: 0)
         
         
@@ -109,14 +112,17 @@ class GameScreenViewController: UIViewController {
     
     @IBAction func standButton(_ sender: UIButton) {
         if(!playerBust){
-            while dealerScore < playerScore {
+            while dealerScore < playerHandValue {
                 drawCard(isPlayer: false)
             }
             
-            if(dealerScore <= 21 && dealerScore >= playerScore) {
+            if(dealerScore <= 21 && dealerScore >= playerHandValue) {
                 //deduct player overall score
+                playerScore -= 50
+                
             } else {
                 //increase player overall score
+                playerScore += 50
             }
             
         }
